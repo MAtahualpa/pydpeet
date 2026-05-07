@@ -17,7 +17,15 @@ from pydpeet.process.analyze.extract.ocv import extract_ocv_iocv
 from pydpeet.process.analyze.resistance import add_resistance_internal
 from pydpeet.process.analyze.soc import SocMethod, add_soc
 from pydpeet.process.merge.series import merge_into_series
-from pydpeet.process.sequence.configs.config import DeviceConfig
+from pydpeet.process.sequence.configs.config import (
+    DeviceConfig,
+    PrimitiveConfig,
+    SequenceOverviewConfig,
+    VisualizationConfig,
+    primitive_config_wrapper,
+    sequence_overview_config_wrapper,
+    visualization_config_wrapper,
+)
 from pydpeet.process.sequence.step_analyzer import add_primitive_segments, extract_sequence_overview
 from pydpeet.process.sequence.utils.postprocessing.df_primitives_correction import df_primitives_correction
 from pydpeet.process.sequence.utils.postprocessing.filter_df import filter_and_split_df_by_blocks
@@ -30,6 +38,12 @@ __all__ = [
     "BatteryConfig",
     "battery_config_wrapper",
     "DeviceConfig",
+    "PrimitiveConfig",
+    "primitive_config_wrapper",
+    "SequenceOverviewConfig",
+    "sequence_overview_config_wrapper",
+    "VisualizationConfig",
+    "visualization_config_wrapper",
     "ReadConfig",
     "SocMethod",
     "add_capacity",
