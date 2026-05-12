@@ -48,18 +48,39 @@ from pydpeet.utils.logging_style import set_logging_style
 
 # Public API for this package
 __all__ = [
-    "BatteryConfig",
-    "battery_config_wrapper",
+    # Tutorial 01
+    "set_logging_style",
+    "ReadConfig",
+    "read",
+    "DataOutputFiletype",
+    "load_custom_module",
+    "mapping",  # TODO diskutieren ob private
+    "merge_into_series",
+    "write",
+    "print_references",
+    "write_to_bibtex",
+    # Tutorial 02
     "DeviceConfig",
     "PrimitiveConfig",
     "primitive_config_wrapper",
+    "calculate_minimum_definitive_differences",
+    "convert",
+    # Tutorial 03
     "SequenceOverviewConfig",
     "sequence_overview_config_wrapper",
+    "df_primitives_correction",
+    "extract_sequence_overview",
+    # Tutorial 04
     "VisualizationConfig",
     "visualization_config_wrapper",
-    "ReadConfig",
-    "load_custom_module",
-    "DataOutputFiletype",
+    "visualize_phases",
+    # Tutorial 05
+    "BatteryConfig",
+    "battery_config_wrapper",
+    # Tutorial 06
+    "extract_ocv_iocv",
+    "compute_ocv_dva_ica",
+    # Tutorial 07
     "SocMethod",
     "add_capacity",
     "add_charge_throughput",
@@ -71,24 +92,12 @@ __all__ = [
     "add_resistance_internal",
     "add_soc",
     "add_soh",
-    "calculate_minimum_definitive_differences",
-    "compute_ocv_dva_ica",
-    "convert",
-    "df_primitives_correction",
-    "extract_ocv_iocv",
-    "extract_sequence_overview",
+    # Tutorial 08
     "filter_and_split_df_by_blocks",
     "filter_df",
     "generate_instructions",
-    "mapping",
-    "merge_into_campaign",
-    "merge_into_series",
-    "print_references",
-    "read",
     "return_or_print_blocks",
-    "set_logging_style",
     "split_df_by_blocks",
-    "visualize_phases",
-    "write",
-    "write_to_bibtex",
+    # TODO was ist das / wofür braucht man das?
+    "merge_into_campaign",
 ]
