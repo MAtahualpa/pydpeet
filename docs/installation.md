@@ -70,7 +70,6 @@ Create a new uv project with Python 3.12:
 
 ```bash
 uv init
-uv python pin 3.12
 ```
 
 :::
