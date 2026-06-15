@@ -14,7 +14,7 @@ from src.pydpeet import visualize_phases
 def base_args():
     """Provides a fresh dictionary of default arguments for every test."""
     return {
-        "dataframe": Mocks.Mock_visualize_phases.dataframe.copy(),
+        "df": Mocks.Mock_visualize_phases.df.copy(),
         "config": replace(Mocks.Mock_visualize_phases.config),
     }
 
@@ -28,32 +28,32 @@ class Test_visualize_phases_dataframe:
         assert result is None
 
     def test_none(self, base_args):
-        base_args["dataframe"] = None
+        base_args["df"] = None
         _assert_raises_and_print(ValueError, visualize_phases, **base_args)
 
     def test_wrong_type(self, base_args):
-        base_args["dataframe"] = "wrong type"
-        assert not isinstance(base_args["dataframe"], pd.DataFrame)
+        base_args["df"] = "wrong type"
+        assert not isinstance(base_args["df"], pd.DataFrame)
         _assert_raises_and_print(ValueError, visualize_phases, **base_args)
 
     def test_empty(self, base_args):
-        base_args["dataframe"] = pd.DataFrame()
+        base_args["df"] = pd.DataFrame()
         _assert_raises_and_print(ValueError, visualize_phases, **base_args)
 
     def test_missing_required_columns(self, base_args):
-        base_args["dataframe"] = base_args["dataframe"].drop(Mocks.Mock_visualize_phases.required_columns, axis=1)
+        base_args["df"] = base_args["df"].drop(Mocks.Mock_visualize_phases.required_columns, axis=1)
         _assert_raises_and_print(ValueError, visualize_phases, **base_args)
 
     def test_wrong_column_dtypes(self, base_args):
         for col, _dtype in Mocks.Mock_visualize_phases.required_columns_dtypes:
-            base_args["dataframe"][col] = base_args["dataframe"][col].astype(str)
+            base_args["df"][col] = base_args["df"][col].astype(str)
         expected_dtypes = pd.Series({col: dtype for col, dtype in Mocks.Mock_visualize_phases.required_columns_dtypes})
-        actual_dtypes = base_args["dataframe"][Mocks.Mock_visualize_phases.required_columns].dtypes
+        actual_dtypes = base_args["df"][Mocks.Mock_visualize_phases.required_columns].dtypes
         assert not actual_dtypes.equals(expected_dtypes)
         _assert_raises_and_print(ValueError, visualize_phases, **base_args)
 
     def test_nan_values(self, base_args, caplog):
-        base_args["dataframe"].loc[:9, Mocks.Mock_visualize_phases.required_columns[0]] = np.nan
+        base_args["df"].loc[:9, Mocks.Mock_visualize_phases.required_columns[0]] = np.nan
         with caplog.at_level(logging.WARNING):
             visualize_phases(**base_args)
         print(f"\nCaptured Warning: {caplog.records[0].message}")
@@ -68,7 +68,7 @@ class Test_visualize_phases_dataframe:
         assert True
 
     def test_inf_values(self, base_args, caplog):
-        base_args["dataframe"].loc[:9, Mocks.Mock_visualize_phases.required_columns[0]] = np.inf
+        base_args["df"].loc[:9, Mocks.Mock_visualize_phases.required_columns[0]] = np.inf
         with caplog.at_level(logging.WARNING):
             visualize_phases(**base_args)
         print(f"\nCaptured Warning: {caplog.records[0].message}")

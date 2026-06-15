@@ -426,7 +426,7 @@ class Mocks:
         formatting_string = "%(levelname)s | %(pathname)s:%(lineno)d | %(message)s"
 
     class Mock_visualize_phases:
-        dataframe = DF_PRIMITIVES.copy()
+        df = DF_PRIMITIVES.copy()
         config = VisualizationConfig.DEFAULT
         add_columns = []
         required_columns = ["Test_Time[s]", "ID", "Variable", "Voltage[V]", "Current[A]", "Power[W]"]
