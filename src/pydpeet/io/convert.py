@@ -437,6 +437,7 @@ def _add_metadata_to_dataframe(
 
     df["Meta_Data"] = None  # NO, this is faster then .loc
     df.loc[0, "Meta_Data"] = str(meta_data)
+    df["Meta_Data"] = df["Meta_Data"].astype("str")
     return df
 
 

@@ -19,7 +19,7 @@ result = extract_ocv_iocv(
     min_loops=70.0,
     visualize=False,
     df_primitives=df_neware_primitives,
-    df=df_neware,
+    df=None,
     config=battery_config_wrapper(c_ref=4.75, max_voltage=4.2, min_voltage=2.5, voltage_intervall=0.01),
 )
 
