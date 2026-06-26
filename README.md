@@ -1,8 +1,9 @@
-
 <div align="center">
+
 [![PyPI](https://img.shields.io/pypi/v/pydpeet)](https://pypi.org/project/pydpeet/)
 [![Docs](https://img.shields.io/badge/docs-latest-blue)](https://eet-tub.github.io/pydpeet/)
 [![License](https://img.shields.io/github/license/eet-tub/pydpeet)](LICENSE)
+
 </div>
 
 
