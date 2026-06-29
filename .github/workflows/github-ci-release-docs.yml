@@ -25,7 +25,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      PYDPEET_DOC_VERSION: ${{ inputs.tag || github.event.release.tag_name }}
+      VERSION: ${{ inputs.tag || github.event.release.tag_name }}
     steps:
       - name: init
         uses: actions/checkout@v6
@@ -51,8 +51,8 @@ jobs:
         run: uv run docs/build_docs.py
       - name: prepare_pages
         run: |
-          mkdir -p docs/_public/$PYDPEET_DOC_VERSION
-          cp -r docs/_build/html/* docs/_public/$PYDPEET_DOC_VERSION/
+          mkdir -p docs/_public/$VERSION
+          cp -r docs/_build/html/* docs/_public/$VERSION/
 
           if [ "${{ github.event_name }}" = "release" ]; then
               mkdir -p docs/_public/stable
@@ -108,10 +108,11 @@ jobs:
         uses: actions/upload-pages-artifact@v5
         with:
           name: docs-version
-          path: docs/_public/$PYDPEET_DOC_VERSION/
+          path: docs/_public/${{ env.VERSION }}/
           retention-days: 14
       - name: pages_artifact_stable
         uses: actions/upload-pages-artifact@v5
+        if: github.event_name == 'release'
         with:
           name: docs-stable
           path: docs/_public/stable/
