@@ -7,7 +7,6 @@
 
 </div>
 
-
 <!-- [![Python](https://img.shields.io/pypi/pyversions/pydpeet)](https://pypi.org/project/pydpeet/)
 [![CI](https://github.com/eet-tub/pydpeet/actions/workflows/github-ci.yml/badge.svg)](https://github.com/eet-tub/pydpeet/actions/workflows/github-ci.yml)
 [![DOI](https://zenodo.org/badge/DOI/<DOI>.svg)](https://doi.org/<DOI>)
@@ -63,9 +62,11 @@ Install PyDPEET directly from PyPI using uv or pip.
 
 ```
 uv add pydpeet
+```
 
-# or
+or
 
+```
 pip install pydpeet
 ```
 
@@ -79,7 +80,7 @@ Please refer to the [developer guide](https://eet-tub.github.io/pydpeet/develope
 
 ## Roadmap
 
-Planned features and ongoing work are tracked in the [Roadmap](https://github.com/orgs/eet-tub/projects/3) at our GitHub Projects
+Planned features and ongoing work are tracked in the [Roadmap](https://github.com/orgs/eet-tub/projects/3) at our GitHub Projects.
 
 <!-- ## FAQ -->
 
@@ -99,8 +100,6 @@ If you encounter an issue, please open a GitHub issue and provide as much inform
 ### Request for Data Conversion
 If PyDPEET cannot read or convert your data, please open an issue or send us sample data via email (pydpeet@eet.tu-berlin.de).
 
-Danach wieder eine Liste:
-
 - cycler model
 - software version
 - export settings
@@ -112,14 +111,3 @@ Danach wieder eine Liste:
 Contributions are always welcome! If you would like to add a new feature, we recommend discussing your idea in a GitHub issue before starting implementation. This helps avoid duplicate work and ensures that the proposed functionality aligns with the project's goals.
 
 Please refer to the [Developer Guide](https://eet-tub.github.io/pydpeet/developer.html) for information on setting up a development environment, coding standards, testing, documentation, and the pull request workflow.
-
-
-<!-- ### Development Workflow -->
-
-<!-- #### Basic Setup -->
-
-<!-- #### Pre-Commit Hook -->
-
-<!-- #### Autogeneration -->
-
-<!-- #### Linting and Formatting -->
