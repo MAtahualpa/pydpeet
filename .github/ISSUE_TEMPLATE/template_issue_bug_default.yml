@@ -1,6 +1,7 @@
 name: Bug Report
 description: File a bug report.
-title: "[Bug]: "
+title: "[Bug] "
+type: bug
 body:
   - type: textarea
     id: bug_description
@@ -16,7 +17,15 @@ body:
     attributes:
       label: Version
       description: What version of our software are you running?
-      placeholder: "'0.4.0' or 'latest'"
+      multiple: false
+      options:
+        - "0.2.0"
+        - "0.3.0"
+        - "0.3.1"
+        - "0.4.0"
+        - "0.5.0"
+        - "other (put details below)"
+      default: 0
     validations:
       required: true
   - type: textarea
@@ -24,7 +33,11 @@ body:
     attributes:
       label: Steps to reproduce the bug
       description: Please add steps to reproduce the bug
-      placeholder: "1., 2., 3., 4., ..."
+      placeholder: |
+        1. Step 1
+        1. Step 2
+        1. Step 3
+        1. Step 4
     validations:
       required: true
   - type: textarea
