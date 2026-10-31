@@ -9,7 +9,7 @@ body:
       label: Describe the feature
       description: A clear and concise description of what the requested feature is.
       placeholder: What feature do you want?
-      value: "A bug happened!"
+      value: "Give me feature!"
     validations:
       required: true
   - type: textarea
