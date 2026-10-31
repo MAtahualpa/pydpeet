@@ -9,6 +9,7 @@ files = [
     "software_design.md",
     "research_impact_statement.md",
     "ai_usage_disclosure.md",
+    "acknowledgements.md",
 ]
 
 content = []
